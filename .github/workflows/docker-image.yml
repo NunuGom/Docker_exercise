@@ -14,6 +14,12 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
+    - name: Docker login
+    - env:
+          DOCKER_USER: ${{ secrets.DOCKER_USER }}
+          DOCKER_PASS: ${{ secrets.DOCKER_PASSWORD }}
+      run: |
+          docker login -u $DOCKER_USER -p $DOCKER_PASS
     - name: Build an image
       run: |
           docker build ../ -t nataly00/docker_exercise
