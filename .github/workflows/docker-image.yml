@@ -14,6 +14,6 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - name: Build image
+    - name: Build an image
       run: |
           docker build ../ -t nataly00/docker_exercise
