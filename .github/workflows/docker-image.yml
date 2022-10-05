@@ -22,4 +22,7 @@ jobs:
           docker login -u $DOCKER_USER -p $DOCKER_PASS
     - name: Build an image
       run: |
-          docker build ../ -t nataly00/docker_exercise
+          docker build . -t nataly00/docker_exercise
+    - name: docker push
+      run: |
+          docker push nataly00/docker_exercise
